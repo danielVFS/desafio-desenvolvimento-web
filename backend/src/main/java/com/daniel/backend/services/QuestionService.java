@@ -15,6 +15,6 @@ public class QuestionService {
 	private QuestionRepository questionRepository;
 	
 	public List<Question> findAll() {
-		return questionRepository.findAll();
+		return questionRepository.findAllRandom();
 	}
 }
