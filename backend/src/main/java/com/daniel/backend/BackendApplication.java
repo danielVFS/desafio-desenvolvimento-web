@@ -13,7 +13,7 @@ import com.daniel.backend.domain.Question;
 import com.daniel.backend.repositories.QuestionRepository;
 
 @SpringBootApplication
-public class BackendApplication implements CommandLineRunner{
+public class BackendApplication{
 	
 	@Autowired
 	private QuestionRepository questionRepository;
@@ -21,16 +21,4 @@ public class BackendApplication implements CommandLineRunner{
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
 	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		Set<String> incorrect_answers = new HashSet<String>();
-		incorrect_answers.add("2");
-		incorrect_answers.add("3");
-		
-		Question question = new Question(null, "Gerais", "easy", "qual foi ...", "1", incorrect_answers);
-		
-		this.questionRepository.saveAll(Arrays.asList(question));
-	}
-
 }
