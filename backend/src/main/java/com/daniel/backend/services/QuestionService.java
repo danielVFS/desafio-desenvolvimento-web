@@ -18,7 +18,7 @@ public class QuestionService {
 		return questionRepository.findAllRandom();
 	}
 	
-	public List<Question> findByDifficulty(String difficulty){
-		return questionRepository.findAllByDifficulty(difficulty);
+	public List<Question> findByDifficulty(String difficulty, Integer amount){
+		return questionRepository.findAllByDifficulty(difficulty, amount);
 	}
 }
