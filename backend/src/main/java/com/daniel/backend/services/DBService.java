@@ -22,7 +22,8 @@ public class DBService {
 		incorrect_answers.add("bruna");
 		
 		Question question = new Question(null, "Gerais", "easy", "qual foi ...", "joao", incorrect_answers);
+		Question question2 = new Question(null, "Gerais", "easy", "qual foi ...", "joao", incorrect_answers);
 		
-		this.questionRepository.saveAll(Arrays.asList(question));
+		this.questionRepository.saveAll(Arrays.asList(question, question2));
 	}
 }
