@@ -1,0 +1,45 @@
+.wrapper {
+  background-color: #fff;
+  max-width: 1100px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.wrapper p {
+  font-size: 1rem;
+  color: #000;
+}
+
+.button-wrapper {
+  transition: all 0.3s ease;
+}
+
+.button-wrapper:hover {
+  opacity: 0.8;
+}
+
+.button-wrapper button {
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.8rem;
+  width: 100%;
+  height: 40px;
+  margin: 5px 0;
+  background-color: #cac9c9;
+  border: 3px solid #cecece;
+  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: #000;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button-wrapper .correct {
+  color: red;
+  background-color: red;
+}
+
+.button-wrapper .incorrect {
+  background-color: green;
+}
