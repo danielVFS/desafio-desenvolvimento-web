@@ -14,4 +14,7 @@ public interface QuestionRepository extends JpaRepository<Question, Integer>{
 
 	@Query(nativeQuery=true, value="SELECT *  FROM Question ORDER BY random()") 
 	List<Question> findAllRandom();
+	
+	@Query("select question from Question question where question.difficulty = :difficulty")
+	List<Question> findAllByDifficulty(String difficulty);
 }
