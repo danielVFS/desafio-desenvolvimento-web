@@ -9,9 +9,7 @@ import Overlay from './components/Overlay';
 import loseImg from './assets/images/lose.jpg';
 import winImg from './assets/images/win.jpg';
 
-import { fetchQuizQuestions } from './API';
-
-import { QuestionState } from './API';
+import { fetchQuizQuestions, QuestionState } from './API';
 
 export type AnswerObject = {
   question: string;

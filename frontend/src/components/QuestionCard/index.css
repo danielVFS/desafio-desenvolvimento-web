@@ -34,12 +34,3 @@
   color: #000;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
 }
-
-.button-wrapper .correct {
-  color: red;
-  background-color: red;
-}
-
-.button-wrapper .incorrect {
-  background-color: green;
-}

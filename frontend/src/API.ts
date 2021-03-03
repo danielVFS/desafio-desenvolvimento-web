@@ -15,9 +15,9 @@ export const fetchQuizQuestions = async (
   amount: number, difficulty: string
 ) => {
   
-  const endpointTest = `http://localhost:8080/questions?difficulty=${difficulty}&amount=${amount}`;
+  const endpoint = `http://localhost:8080/questions?difficulty=${difficulty}&amount=${amount}`;
 
-  const data = await (await fetch(endpointTest)).json();
+  const data = await (await fetch(endpoint)).json();
 
   return data.map((question: Question) => ({
     ...question,
