@@ -11,7 +11,7 @@ import winImg from './assets/images/win.jpg';
 
 import { fetchQuizQuestions } from './API';
 
-import { QuestionState, Difficulty } from './API';
+import { QuestionState } from './API';
 
 export type AnswerObject = {
   question: string;
@@ -28,7 +28,8 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [firstTry, setFirstTry] = useState(true);
   const [gameOver, setGameOver] = useState(true);
-  const [howManyQuestionOption, setHowManyQuestionOption] = useState(2);
+  const [howManyQuestionOption, setHowManyQuestionOption] = useState(3);
+  const [difficulty, setDifficulty] = useState("easy");
 
   const startTrivia = async () => {
     setLoading(true);
@@ -37,7 +38,7 @@ const App = () => {
 
     const newQuestions = await fetchQuizQuestions(
       howManyQuestionOption,
-      Difficulty.EASY,
+      difficulty,
     );
 
     setQuestions(newQuestions);
@@ -96,6 +97,16 @@ const App = () => {
   const handleSelectedHowManyQuestion = (howManyQuestionOption) => {
     setHowManyQuestionOption(howManyQuestionOption.value);
   }
+  
+  const difficultyOptions = [
+    { value: "easy", label: "Fácil" },
+    { value: "medium", label: "Médio" },
+    { value: "hard", label: "Difícil" },
+  ];
+
+  const handleSelectDifficulty = (difficulty) => {
+    setDifficulty(difficulty.value);
+  }
 
   return (
     <div className="container">
@@ -109,7 +120,14 @@ const App = () => {
             placeholder="Quantas questões você deseja ?"
             onChange={handleSelectedHowManyQuestion}
             autoFocus={true}
-          />
+            />
+            <br/>
+            <Select
+            options={difficultyOptions}
+            placeholder="Selecione a dificuldade"
+            onChange={handleSelectDifficulty}
+            autoFocus={true}
+            />
           </div>
         </>
       ) : null}
