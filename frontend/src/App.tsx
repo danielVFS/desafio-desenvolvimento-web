@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Select from 'react-select';
 
 import './App.css';
 
@@ -19,8 +20,6 @@ export type AnswerObject = {
   correctAnswer: string;
 }
 
-const TOTAL_QUESTIONS = 4;
-
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
@@ -29,6 +28,7 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [firstTry, setFirstTry] = useState(true);
   const [gameOver, setGameOver] = useState(true);
+  const [howManyQuestionOption, setHowManyQuestionOption] = useState(2);
 
   const startTrivia = async () => {
     setLoading(true);
@@ -36,7 +36,7 @@ const App = () => {
     setFirstTry(false);
 
     const newQuestions = await fetchQuizQuestions(
-      TOTAL_QUESTIONS,
+      howManyQuestionOption,
       Difficulty.EASY,
     );
 
@@ -78,33 +78,54 @@ const App = () => {
   const nextQuestion = () => {
     const nextQuestion = number + 1;
 
-    if (nextQuestion === TOTAL_QUESTIONS) {
+    if (nextQuestion === howManyQuestionOption) {
       setGameOver(true);
       setFirstTry(false);
     } else {
       setNumber(nextQuestion);
     }
   }
-  
+
+  const howManyQuestionsOptions = [
+    { value: 1, label: "1" },
+    { value: 2, label: "2" },
+    { value: 3, label: "3" },
+    { value: 4, label: "4" },
+  ];
+
+  const handleSelectedHowManyQuestion = (howManyQuestionOption) => {
+    setHowManyQuestionOption(howManyQuestionOption.value);
+  }
+
   return (
     <div className="container">
       <h2 className="title"> Quiz game</h2>
-      {firstTry || userAnswers.length === TOTAL_QUESTIONS ? (
-        <button className="start" onClick={startTrivia}>Iniciar Jogo</button>
+      {firstTry || userAnswers.length === howManyQuestionOption ? (
+        <>
+          <button className="start" onClick={startTrivia}>Iniciar Jogo</button>
+          <div className="selectArea">
+            <Select
+            options={howManyQuestionsOptions}
+            placeholder="Quantas questões você deseja ?"
+            onChange={handleSelectedHowManyQuestion}
+            autoFocus={true}
+          />
+          </div>
+        </>
       ) : null}
       {!gameOver ? <p className="score">Placar: { score }</p> : null}
       {loading && <p>Carregando perguntas do quiz...</p>}
       {!loading && !gameOver && (
         <QuestionCard
         questionNumber={number + 1}
-        totalQuestions={TOTAL_QUESTIONS}
+        totalQuestions={howManyQuestionOption}
         question={questions[number].question}
         answers={questions[number].answers}
         userAnswer={userAnswers ? userAnswers[number] : undefined}
         callback={checkAnswer}
       />
       )}
-      {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== howManyQuestionOption - 1 ? (
         <button className="next" onClick={nextQuestion}>Próxima Pergunta</button>
       ) : null}
       {gameOver && !firstTry &&
@@ -115,7 +136,7 @@ const App = () => {
         textButton="Recomeçar Quiz"
         />
       }
-      {score === TOTAL_QUESTIONS ? 
+      {score === howManyQuestionOption ? 
         <Overlay
         callback={startTrivia}
         image={winImg}

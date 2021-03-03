@@ -27,6 +27,7 @@ public class Question implements Serializable{
 	
 	private String correct_answer;
 	
+	// Embedded, collection with basic object, not necessary a Entity
 	@ElementCollection
 	 private Set<String> incorrect_answers = new HashSet<>();
 
