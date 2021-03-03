@@ -15,10 +15,6 @@
 
 <br>
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/54604875/86625584-abb7b180-bf9b-11ea-9344-20e4e972be99.gif" width="100%">
-</p>
-
 ## :rocket: Tecnologias e Ferramentas Utilizadas
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -69,6 +65,8 @@ Ou se preferir, importe o código diretamente em sua IDE para simplificar.
 - [Eclipse](https://www.eclipse.org/downloads/)
 
 E execute o projeto pela própria IDE.
+
+<br><br>
 
 Para iniciar o **Frontend** em React certifique-se de ter instalado:
 
