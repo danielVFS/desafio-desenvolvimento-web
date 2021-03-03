@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,25 +12,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Question implements Serializable{
-	
+public class Question implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String category;
-	
+
 	private String difficulty;
-	
+
 	private String question;
-	
+
 	private String correct_answer;
-	
-	// Embedded, collection with basic object, not necessary a Entity
+
 	@ElementCollection
-	 private Set<String> incorrect_answers = new HashSet<>();
+	@Column(name = "incorrect_answers")
+	private Set<String> incorrect_answers = new HashSet<>();
 
 	public Question() {
 		super();
@@ -149,6 +150,5 @@ public class Question implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
+
 }
