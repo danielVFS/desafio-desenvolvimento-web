@@ -8,6 +8,7 @@ type Props = {
   question: string;
   answers: string[];
   callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  category: string;
   userAnswer: AnswerObject | undefined;
   questionNumber: number;
   totalQuestions: number;
@@ -17,6 +18,7 @@ const QuestionCard: React.FC<Props> = ({
   question,
   answers,
   callback,
+  category,
   userAnswer,
   questionNumber,
   totalQuestions
@@ -26,6 +28,7 @@ const QuestionCard: React.FC<Props> = ({
       <p>
         Pergunta: {questionNumber} / {totalQuestions}
       </p>
+      <p>Categoria: { category }</p>
       <p dangerouslySetInnerHTML={{ __html: question }} />
       <div className="button-wrapper">
         {answers.map((answer) => (

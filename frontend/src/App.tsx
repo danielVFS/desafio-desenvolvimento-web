@@ -138,6 +138,7 @@ const App = () => {
         questionNumber={number + 1}
         totalQuestions={howManyQuestionOption}
         question={questions[number].question}
+        category={questions[number].category}
         answers={questions[number].answers}
         userAnswer={userAnswers ? userAnswers[number] : undefined}
         callback={checkAnswer}
