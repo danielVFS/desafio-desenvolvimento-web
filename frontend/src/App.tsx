@@ -98,6 +98,7 @@ const App = () => {
   }
   
   const categoryOptions = [
+    { value: "desenvolvimento web", label: "Desenvolvimento Web" },
     { value: "futebol", label: "Futebol" },
     { value: "história", label: "História" },
   ];
