@@ -66,7 +66,7 @@ Ou se preferir, importe o código diretamente em sua IDE para simplificar.
 
 E execute o projeto pela própria IDE.
 
-<br><br>
+<br>
 
 Para iniciar o **Frontend** em React certifique-se de ter instalado:
 
