@@ -12,10 +12,10 @@ export type Question = {
 export type QuestionState = Question & { answers: string[] }
 
 export const fetchQuizQuestions = async (
-  amount: number, difficulty: string
+  amount: number, category: string
 ) => {
   
-  const endpoint = `http://localhost:8080/questions?difficulty=${difficulty}&amount=${amount}`;
+  const endpoint = `http://localhost:8080/questions?category=${category}&amount=${amount}`;
 
   const data = await (await fetch(endpoint)).json();
 

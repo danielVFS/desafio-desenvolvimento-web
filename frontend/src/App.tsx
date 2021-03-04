@@ -27,7 +27,7 @@ const App = () => {
   const [firstTry, setFirstTry] = useState(true);
   const [gameOver, setGameOver] = useState(true);
   const [howManyQuestionOption, setHowManyQuestionOption] = useState(3);
-  const [difficulty, setDifficulty] = useState("easy");
+  const [category, setCategory] = useState("geral");
 
   const startTrivia = async () => {
     setLoading(true);
@@ -36,7 +36,7 @@ const App = () => {
 
     const newQuestions = await fetchQuizQuestions(
       howManyQuestionOption,
-      difficulty,
+      category,
     );
 
     setQuestions(newQuestions);
@@ -89,21 +89,21 @@ const App = () => {
     { value: 1, label: "1" },
     { value: 2, label: "2" },
     { value: 3, label: "3" },
-    { value: 4, label: "4" },
   ];
 
   const handleSelectedHowManyQuestion = (howManyQuestionOption) => {
     setHowManyQuestionOption(howManyQuestionOption.value);
   }
   
-  const difficultyOptions = [
-    { value: "easy", label: "Fácil" },
-    { value: "medium", label: "Médio" },
-    { value: "hard", label: "Difícil" },
+  const categoryOptions = [
+    { value: "geral", label: "Conhecimentos Gerais" },
+    { value: "futebol", label: "Futebol" },
+    { value: "história", label: "História" },
+    { value: "animais", label: "Animais" },
   ];
 
-  const handleSelectDifficulty = (difficulty) => {
-    setDifficulty(difficulty.value);
+  const handleSelectedCategory = (category) => {
+    setCategory(category.value);
   }
 
   return (
@@ -114,18 +114,18 @@ const App = () => {
           <button className="start" onClick={startTrivia}>Iniciar Jogo</button>
           <div className="selectArea">
             <Select
-            options={howManyQuestionsOptions}
-            placeholder="Quantas questões você deseja ?"
-            onChange={handleSelectedHowManyQuestion}
+            options={categoryOptions}
+            placeholder="Selecione a categoria"
+            onChange={handleSelectedCategory}
             autoFocus={true}
             />
             <br/>
             <Select
-            options={difficultyOptions}
-            placeholder="Selecione a dificuldade"
-            onChange={handleSelectDifficulty}
-            autoFocus={true}
+            options={howManyQuestionsOptions}
+            placeholder="Quantas questões você deseja ?"
+            onChange={handleSelectedHowManyQuestion}
             />
+            <br/>
           </div>
         </>
       ) : null}
