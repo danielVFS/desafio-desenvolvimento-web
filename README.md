@@ -34,13 +34,13 @@ Quiz game - Um quiz desenvolvido com React/Typescript com Spring boot.
 <h4 align="center">
   💻 Frontend - Demo
   <br>
-  <img alt="Frontend" src="https://user-images.githubusercontent.com/54604875/109860378-d5b19880-7c3c-11eb-81b0-097c2cc0a075.gif">
+  <img alt="Frontend" src="https://user-images.githubusercontent.com/54604875/110020858-d31c7500-7d08-11eb-81c1-bf05c2643217.gif">
 </h4>
 
 <h4 align="center">
   💻 Requisição GET - Backend
   <br>
-  <img alt="backend" src="https://user-images.githubusercontent.com/54604875/109860866-6b4d2800-7c3d-11eb-8415-02beaa280f48.png">
+  <img alt="backend" src="https://user-images.githubusercontent.com/54604875/110020932-e6c7db80-7d08-11eb-8a73-070e3f381693.png">
 </h4>
 
 <br>
@@ -54,9 +54,13 @@ Para iniciar o **Backend** com o Spring boot certifique-se de ter instalado:
 
 ```bash
 cd backend
-./mvnw spring-boot:run
 
-Exemplo de requisição: `http://localhost:8080/questions?difficulty=hard&amount=4`
+execute:
+
+Mac/Linux: ./mvnw spring-boot:run
+Windows: mvnw spring-boot:run
+
+Exemplo de requisição: `http://localhost:8080/questions?category=desenvolvimento%20web&amount=5`
 ```
 
 Ou se preferir, importe o código diretamente em sua IDE para simplificar.
