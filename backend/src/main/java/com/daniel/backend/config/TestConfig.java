@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.daniel.backend.repositories.QuestionRepository;
 import com.daniel.backend.services.DBService;
 
 @Configuration

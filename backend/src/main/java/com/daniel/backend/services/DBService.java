@@ -51,9 +51,8 @@ public class DBService {
 
 		Question question4 = new Question(null, "desenvolvimento web", "easy",
 				"Quais tags HTML são usadas para exibir os dados na forma tabular?",
-				"<table>, <thead>, <tbody>, <tfoot>, <tr>, <th> e <td>.",
-				this.createIncorrectAnswers("<div>, <h1> e <p>.", "<header>, <nav>, <footer>, <a>.",
-						"Não é possível exibir tabelas com HTML."));
+				"Tags: table, thead, tbody, tfoot, tr, th e td.", this.createIncorrectAnswers("Tags: div, h1 e p.",
+						"Tags: header, nav, footer, a.", "Não é possível exibir tabelas com HTML."));
 		Question question5 = new Question(null, "desenvolvimento web", "easy",
 				"Qual a principal diferença entre CSS Grid e Flexbox?",
 				"Flexbox é unidimensional, seu foco é em organizar os item em linhas OU colunas, perfeito para components internos. Já o CSS Grid é multidimensional, onde visa organizar os item em linhas e Colunas, perfeito para Layouts(cabeçalho, sidebar, entre outros).",

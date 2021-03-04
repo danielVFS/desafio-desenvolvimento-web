@@ -10,15 +10,15 @@ import com.daniel.backend.repositories.QuestionRepository;
 
 @Service
 public class QuestionService {
-	
+
 	@Autowired
 	private QuestionRepository questionRepository;
-	
+
 	public List<Question> findAll() {
 		return questionRepository.findAllRandom();
 	}
-	
-	public List<Question> findByCategory(String category, Integer amount){
+
+	public List<Question> findByCategory(String category, Integer amount) {
 		return questionRepository.findAllByCategory(category, amount);
 	}
 }

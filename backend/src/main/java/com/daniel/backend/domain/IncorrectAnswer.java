@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 
 @Embeddable
 public class IncorrectAnswer {
-	
+
 	@NotNull
 	private String incorrect_answer;
 
@@ -21,6 +21,5 @@ public class IncorrectAnswer {
 	public void setIncorrect_answer(String incorrect_answer) {
 		this.incorrect_answer = incorrect_answer;
 	}
-	
-	
+
 }
