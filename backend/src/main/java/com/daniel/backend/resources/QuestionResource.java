@@ -30,10 +30,10 @@ public class QuestionResource {
 
 	@GetMapping
 	public ResponseEntity<List<Question>> show(
-			@RequestParam(value = "difficulty", defaultValue = "easy") String difficulty,
+			@RequestParam(value = "category", defaultValue = "futebol") String category,
 			@RequestParam(value = "amount", defaultValue = "2") String amount) {
 		
-		List<Question> questions = questionService.findByDifficulty(difficulty, Integer.parseInt(amount));
+		List<Question> questions = questionService.findByCategory(category, Integer.parseInt(amount));
 
 		return ResponseEntity.ok().body(questions);
 	}
