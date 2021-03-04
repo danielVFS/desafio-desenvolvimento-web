@@ -132,6 +132,9 @@ const App = () => {
       ) : null}
       {!gameOver ? <p className="score">Placar: { score }</p> : null}
       {loading && <p>Carregando perguntas do quiz...</p>}
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== howManyQuestionOption - 1 ? (
+        <button className="next" onClick={nextQuestion}>Próxima Pergunta</button>
+      ) : null}
       {!loading && !gameOver && (
         <QuestionCard
         questionNumber={number + 1}
@@ -143,9 +146,6 @@ const App = () => {
         callback={checkAnswer}
       />
       )}
-      {!gameOver && !loading && userAnswers.length === number + 1 && number !== howManyQuestionOption - 1 ? (
-        <button className="next" onClick={nextQuestion}>Próxima Pergunta</button>
-      ) : null}
       {gameOver && !firstTry &&
         <Overlay
         callback={startTrivia}
