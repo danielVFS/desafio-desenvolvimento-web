@@ -26,36 +26,31 @@ public class DBService {
 	}
 
 	public void databaseInstance() {
-		Question question1 = new Question(null, "geral", "easy", "Qual o maior país do mundo?", "Russia",
-				this.createIncorrectAnswers("Brasil", "India", "Estados Unidos"));
-		Question question2 = new Question(null, "geral", "medium", "Quantas casas tem o número PI?",
-				"Infinitas", this.createIncorrectAnswers("Duas", "Vinte", "Milhares"));
-		Question question3 = new Question(null, "geral", "hard", "Oque a palavra LEGEND significa?",
-				"Lenda", this.createIncorrectAnswers("Legenda", "Lendário", "Conto"));
 
-		Question question4 = new Question(null, "futebol", "medium",
+		Question question1 = new Question(null, "futebol", "medium",
 				"Qual o número máximo de jogadores em uma partida de futebol", "11",
 				this.createIncorrectAnswers("10", "7", "8"));
-		Question question5 = new Question(null, "futebol", "easy", "Qual a maior torcida do Brasil?", "Flamengo",
+		Question question2 = new Question(null, "futebol", "easy", "Qual a maior torcida do Brasil?", "Flamengo",
 				this.createIncorrectAnswers("Corinthians", "São Paulo", "Palmeiras"));
-		Question question6 = new Question(null, "futebol", "hard", "Qual o ultimo campeão mundial", "Bayern",
+		Question question3 = new Question(null, "futebol", "hard", "Qual o ultimo campeão mundial", "Bayern",
 				this.createIncorrectAnswers("Barcelona", "Palmeiras", "Goiás"));
+		Question question4 = new Question(null, "futebol", "medium", "Qual o ultimo campeão da Champions League",
+				"Real Madrid", this.createIncorrectAnswers("Bayern", "Barcelona", "Arsenal"));
+		Question question5 = new Question(null, "futebol", "easy", "Qual time paulista não tem mundial ?", "Palmeiras",
+				this.createIncorrectAnswers("Corinthians", "Santos", "Flamengo"));
 
-		Question question7 = new Question(null, "história", "hard", "Qual tempo durou a guerra dos cem anos", "116",
+		Question question6 = new Question(null, "história", "hard", "Qual tempo durou a guerra dos cem anos", "116",
 				this.createIncorrectAnswers("100", "101", "110"));
-		Question question8 = new Question(null, "história", "easy", "Ares era deus da?", "Guerra",
+		Question question7 = new Question(null, "história", "easy", "Ares era deus da?", "Guerra",
 				this.createIncorrectAnswers("Águas", "Morte", "Agricultura"));
+		Question question8 = new Question(null, "história", "easy", "Ano de início da 1º guerra mundial?", "1914",
+				this.createIncorrectAnswers("1945", "1919", "1932"));
 		Question question9 = new Question(null, "história", "medium", "Qual a denominação científca do homem moderno?",
 				"Homo sapiens sapiens", this.createIncorrectAnswers("Homo erectus", "Homo sapiens", "Neandertal"));
-
-		Question question10 = new Question(null, "animais", "hard", "Qual o maior felino do mundo?", "Tigre",
-				this.createIncorrectAnswers("Leão", "Onça", "Gato"));
-		Question question11 = new Question(null, "animais", "medium", "Qual o maior animal do mundo?", "Baleia-azul",
-				this.createIncorrectAnswers("Rinoceronte", "Elefante", "Rato"));
-		Question question12 = new Question(null, "animais", "easy", "Qual a maior ave do Brasil?", "Avestruz",
-				this.createIncorrectAnswers("Morcego", "Arara-azul", "Galinha"));
+		Question question10 = new Question(null, "história", "medium", "Qual o principal deus grego?", "Zeus",
+				this.createIncorrectAnswers("Hades", "Poseiodon", "Ares"));
 
 		this.questionRepository.saveAll(Arrays.asList(question1, question2, question3, question4, question5, question6,
-				question7, question8, question9, question10, question11, question12));
+				question7, question8, question9, question10));
 	}
 }

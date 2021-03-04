@@ -89,6 +89,8 @@ const App = () => {
     { value: 1, label: "1" },
     { value: 2, label: "2" },
     { value: 3, label: "3" },
+    { value: 4, label: "4" },
+    { value: 5, label: "5" },
   ];
 
   const handleSelectedHowManyQuestion = (howManyQuestionOption) => {
@@ -96,10 +98,8 @@ const App = () => {
   }
   
   const categoryOptions = [
-    { value: "geral", label: "Conhecimentos Gerais" },
     { value: "futebol", label: "Futebol" },
     { value: "história", label: "História" },
-    { value: "animais", label: "Animais" },
   ];
 
   const handleSelectedCategory = (category) => {
