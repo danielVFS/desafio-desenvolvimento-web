@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -29,7 +30,7 @@ public class Question implements Serializable {
 	private String correct_answer;
 
 	@ElementCollection
-	@Column(name = "incorrect_answers")
+	@CollectionTable(name = "INCORRECT_ANSWERS")
 	private Set<String> incorrect_answers = new HashSet<>();
 
 	public Question() {
